@@ -1,0 +1,28 @@
+{
+  "name": "playwright-api-testing-framework",
+  "version": "1.0.0",
+  "description": "Playwright E2E API testing framework for Restful-Booker API with comprehensive validation",
+  "main": "index.js",
+  "scripts": {
+    "test": "playwright test",
+    "test:headed": "playwright test --headed",
+    "test:debug": "playwright test --debug",
+    "test:auth": "playwright test tests/api/auth",
+    "test:bookings": "playwright test tests/api/bookings",
+    "test:health": "playwright test tests/api/health",
+    "test:count": "playwright test tests/api/bookings/booking-count.spec.ts"
+  },
+  "keywords": [
+    "playwright",
+    "api-testing",
+    "e2e",
+    "restful-booker"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.40.0",
+    "@types/node": "^20.10.0",
+    "typescript": "^5.3.3"
+  }
+}
