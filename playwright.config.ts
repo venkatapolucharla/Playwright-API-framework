@@ -28,5 +28,5 @@ export default defineConfig({
   ],
 
   globalSetup: './tests/utils/global-setup.ts',
-  webServer: undefined,
+  webServer: undefined, 
 });
