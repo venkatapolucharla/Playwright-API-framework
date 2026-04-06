@@ -1,13 +1,23 @@
-name: Playwright Tests
+# ─────────────────────────────────────────────
+# ▶︎  Playwright CI ◀︎
+# One clean test run after every merge to main
+# ─────────────────────────────────────────────
+name: Playwright Tests        # Label shown in Actions UI
+# ────────────────
+# Triggers
+# ────────────────
 on:
-  push:
+  push:                  # Run only when commits land on main
     branches: [ main, master ]
   pull_request:
     branches: [ main, master ]
+# ────────────────
+# Jobs
+# ────────────────
 jobs:
-  test:
+  test:                # Single job for the entire suite
     timeout-minutes: 60
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest  # Fresh Linux VM each time
     steps:
     - uses: actions/checkout@v5
     - uses: actions/setup-node@v6
