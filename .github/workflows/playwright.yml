@@ -34,6 +34,16 @@ jobs:
       run: npx playwright install --with-deps
     - name: Run Playwright tests
       run: npx playwright test
+    - name: Send Email
+      run: node scripts/send-email-with-playwright.js
+      
+      env:
+          SMTP_HOST: "smtp.gmail.com"
+          SMTP_PORT: 465
+          SMTP_USER: ${{ secrets.SMTP_USER }}
+          SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
+          EMAIL_TO: ${{ secrets.EMAIL_TO }}
+          EMAIL_FROM: ${{ secrets.EMAIL_FROM }}
     - uses: actions/upload-artifact@v5
       if: ${{ !cancelled() }}
       with:
