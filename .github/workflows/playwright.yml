@@ -44,6 +44,7 @@ jobs:
           SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
           EMAIL_TO: ${{ secrets.EMAIL_TO }}
           EMAIL_FROM: ${{ secrets.EMAIL_FROM }}
+          
     - uses: actions/upload-artifact@v5
       if: ${{ !cancelled() }}
       with:
